@@ -13,5 +13,9 @@
   },
   "engines": {
     "node": "20.9.0"
+  },
+  "dependencies": {
+    "firebase": "^10.6.0",
+    "firebaseui": "^6.1.0"
   }
 }

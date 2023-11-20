@@ -1,48 +1,50 @@
-var firebaseConfig = {
-    apiKey: "AIzaSyAbObvLRyjEinjsirTt2Ns2KxWH_f1WIVo",
-    authDomain: "signup-and-login-d7765.firebaseapp.com",
-    projectId: "signup-and-login-d7765",
-    storageBucket: "signup-and-login-d7765.appspot.com",
-    messagingSenderId: "312993188744",
-    appId: "1:312993188744:web:bb3c7aa820875ee66d483d",
-    measurementId: "G-X0RXD677TV"
-  };
+import { getUser } from "../firebase/auth";
+import { initApp } from "../firebase/config";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 
-  // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+initApp();
+const auth = getAuth();
 
-var dataB = firebase.database().ref('data')
-function UserRegister(){
-    var email= document.getElementById('email').value;
-    var password= document.getElementById('password').value;
-    firebase.auth().createUserWithEmailAndPassword(email.password).then(function(){})
-    .catch(function(error){
-        var errorcode = error.code;
-        var errormsg = error.message;
-    });
-}
+const registerForm = document.querySelector("form#Register");
 
-const auth = firebase.auth();
-function Signin(){
-    var email = document.getElementById('email').value;
-    var password = document.getElementById('password').value;
-    const promise = auth.SignInWithEmailAndPassword(email,password);
-    promise.catch(e => alert(e.msg));
-    window.open("https://www.Google.com","__self");
-}   
-document.getElementById('form').addEventListener('submit', (e) => {
-    e.preventDefault();
-    var userinfo = dataB.push();
-    iseromfp.set({
-        name:getid('fname'),
-        email:getid('email'),
-        password:getid('password'),
-    });
-    alert("Succesfully Signed Up");
-    console.log("sent");
-    document.getElementById('form'.reset());
-})
-function getid(id){
-    return document.getElementById(id).value;
+registerForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const email = registerForm.querySelector("input[name='email']").value;
+  const password = registerForm.querySelector("input[name='password']").value;
+
+  const createdUser = await createUserWithEmailAndPassword(
+    auth,
+    email,
+    password
+  );
+
+  if (createdUser.user) {
+    // redirect to menu page
+    window.localStorage.setItem("user", createdUser.user.email);
+    window.location.replace("/Menupage/Menu.html");
+  }
+});
+
+const loginForm = document.querySelector("form#Login");
+
+loginForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const email = loginForm.querySelector("input[name='email']").value;
+  const password = loginForm.querySelector("input[name='password']").value;
+
+  const signedInUser = await signInWithEmailAndPassword(auth, email, password);
+
+  if (signedInUser.user) {
+    // redirect to menu page
+    window.localStorage.setItem("user", signedInUser.user.email);
+    window.location.replace("/Menupage/Menu.html");
+  }
+});
+
+if (getUser()) {
+  window.location.replace("../index.html");
 }
