@@ -2,8 +2,7 @@ import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import { initApp } from "./config";
 
 initApp();
-
-const auth = getAuth();
+export const auth = getAuth();
 
 onAuthStateChanged(auth, (user) => {
   if (user) {

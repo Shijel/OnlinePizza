@@ -1,13 +1,12 @@
-import { getUser } from "../firebase/auth";
-import { initApp } from "../firebase/config";
+import { getUser, auth } from "../firebase/auth";
 import {
-  getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
 
-initApp();
-const auth = getAuth();
+if (getUser()) {
+  window.location.replace("../index.html");
+}
 
 const registerForm = document.querySelector("form#Register");
 
@@ -44,7 +43,3 @@ loginForm.addEventListener("submit", async (e) => {
     window.location.replace("/Menupage/Menu.html");
   }
 });
-
-if (getUser()) {
-  window.location.replace("../index.html");
-}
