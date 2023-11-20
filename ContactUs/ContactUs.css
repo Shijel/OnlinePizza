@@ -1,0 +1,100 @@
+body{
+    background-color: #FFD700;
+    background-repeat: no-repeat;
+    display: auto;
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+    background-image: url("BG1.jpg"); 
+    background-position: center;
+    background-size:100% 190%;
+
+}
+
+.nav{
+    box-shadow:orange;
+
+
+}
+.navbar .navbar-brand{
+    color:red;
+
+
+}
+.navbar .container-fluid .navbar-header .navbar-toggle .icon-bar{
+    color:yellow;
+
+}
+.navbar{
+    box-shadow: 0 0 10px red;
+    z-index: 999;
+}
+.Navbar-header{
+     color: yellow;
+}
+
+.ul{
+    color: yellow;
+}
+
+footer{
+    background-color:#2A3439;
+    color: white;
+    height: 18vh;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 15px;
+    position:relative;top:460px;
+    margin:auto;
+    padding: 20px 0;
+    padding-right: 10px;
+
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+}
+input {
+    border:0;
+    border-radius: 8px;
+    padding: 10px;
+    width: auto;
+    opacity: 0.6;
+    background-color: #696969;
+    color: white;
+    margin-right: 10px;
+    position: relative;top: 5px;
+}
+::placeholder{
+    color: white;
+    font-size: 15px; 
+}
+button {
+    border-radius: 8px;
+    padding: 10px;
+    background-color: red;
+    color: white;
+    position: relative;left:15px;
+    position: relative;top:5px;
+
+}
+
+.info-box {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    padding: 5px;
+    margin: auto;
+    max-width: 560px;
+    height: 500px;
+    text-align: center;
+    background-color: rgb(36, 35, 35);
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+}
+
