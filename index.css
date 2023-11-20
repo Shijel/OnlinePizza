@@ -1,0 +1,103 @@
+body {
+  background-color: #ffd700;
+  background-repeat: no-repeat;
+  display: auto;
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  background-image: url("/bg.jpg");
+  background-position: center;
+  background-size: 100% 120%;
+}
+
+.nav {
+  box-shadow: red;
+}
+.navbar .navbar-brand {
+  color: red;
+}
+.navbar .container-fluid .navbar-header .navbar-toggle .icon-bar {
+  color: yellow;
+}
+.navbar {
+  box-shadow: 0 0 10px red;
+  z-index: 999;
+}
+.Navbar-header {
+  color: yellow;
+}
+
+.ul {
+  color: yellow;
+}
+
+.order-box {
+  display: flex;
+  flex-direction: column;
+  max-width: 320px;
+  margin: 30px auto;
+}
+input {
+  border: 0;
+  border-radius: 8px;
+  padding: 10px;
+  max-width: 40%;
+  opacity: 0.6;
+  color: white;
+  background-color: #252424;
+  margin-right: 10px;
+  position: relative;
+  top: 5px;
+}
+button {
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #fa3232;
+  color: white;
+  position: relative;
+  left: 15px;
+  position: relative;
+  top: 5px;
+}
+::placeholder {
+  color: white;
+  font-size: 15px;
+}
+.info-box {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border: 10px;
+  border-radius: 8px;
+  border-color: red;
+  padding: 5px;
+  margin: auto;
+  width: 400px;
+  height: 400px;
+  text-align: center;
+}
+
+footer {
+  display: flex;
+  position: fixed;
+  bottom: 0px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  min-width: 100vw;
+  height: 50px;
+  background-color: rgb(61, 61, 61);
+}
+footer ul li {
+  display: inline;
+  text-decoration: none;
+  text-align: center;
+  padding-right: 40px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+footer a {
+  color: yellow;
+}
