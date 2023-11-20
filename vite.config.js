@@ -8,6 +8,7 @@ export default defineConfig({
         index: resolve(__dirname, "index.html"),
         Menu: resolve(__dirname, "Menupage/Menu.html"),
         ContactUs: resolve(__dirname, "ContactUs/ContactUs.html"),
+        loginSignup: resolve(__dirname, "Loginsignup/loginSignup.html"),
       },
     },
   },
